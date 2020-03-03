@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 8880
+
+spring:
+  profiles: dev
+  application:
+    name: abcmsc-consumer-depart
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8100.com:8100/eureka
+      
+---
+server:
+  port: 8890
+
+spring:
+  profiles: test
+  application:
+    name: abcmsc-consumer-depart
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8200.com:8200/eureka
+
