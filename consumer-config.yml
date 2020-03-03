@@ -1,5 +1,5 @@
 #新增一个属性
-predix: one++
+prefix: one++
 
 spring:
   profiles:
