@@ -1,0 +1,38 @@
+﻿spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 8100
+
+spring:
+  profiles: dev
+  application:
+    name: config-eureka-client
+
+eureka:
+  instance:
+    hostname: eureka8100.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka8100.com:8100/eureka/
+---
+server:
+  port: 8200
+
+spring:
+  profiles: test
+  application:
+    name: config-eureka-client
+
+eureka:
+  instance:
+    hostname: eureka8200.com
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://eureka8200.com:8200/eureka/
