@@ -1,3 +1,6 @@
+#新增一个属性
+suffix: ++tow
+
 spring:
   profiles:
     active:
