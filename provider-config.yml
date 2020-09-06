@@ -1,5 +1,5 @@
 #新增一个属性
-suffix: ++twotwotwo
+suffix: -two
 
 spring:
   profiles:
