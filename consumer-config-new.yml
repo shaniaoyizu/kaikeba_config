@@ -1,0 +1,35 @@
+#新增一个属性
+prefix: one-
+
+spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 8880
+
+spring:
+  profiles: dev
+  application:
+    name: msc-consumer-depart
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8100.com:8100/eureka
+      
+---
+server:
+  port: 8890
+
+spring:
+  profiles: test
+  application:
+    name: msc-consumer-depart
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8200.com:8200/eureka
+

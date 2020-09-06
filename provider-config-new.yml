@@ -1,0 +1,67 @@
+#新增一个属性
+suffix: -two
+
+spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 8881
+spring:
+  profiles: dev
+  application:
+    name: msc-provider-depart
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///test?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: xiaoBAO22
+  
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8100.com:8100/eureka
+  instance:
+    instance-id: msc-provider-8881
+    hostname: localhost
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 3
+---
+server:
+  port: 8882
+spring:
+  profiles: test
+  application:
+    name: msc-provider-depart
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///test?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: xiaoBAO22
+  
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka8200.com:8200/eureka
+  instance:
+    instance-id: msc-provider-8882
+    hostname: localhost
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 3
