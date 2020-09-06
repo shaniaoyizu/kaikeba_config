@@ -1,5 +1,5 @@
 #新增一个属性
-prefix: oneoneone++
+prefix: one-
 
 spring:
   profiles:
